@@ -1,0 +1,11 @@
+V01,Luxio,BK 8989 KK,8,Tersedia,400000
+V02,Luxio,BK 3492 JJ,8,Tersedia,400000
+V03,Vito,BK 9237 IL,8,Tersedia,400000
+V04,Vito,BK 2470 LP,8,Tersedia,400000
+V05,Gelora,BK 6728 OT,11,Tersedia,550000
+V06,Gelora,BK 7648 UT,11,Dipinjam,550000
+V07,Sprint,BK 8024 RE,11,Tersedia,550000
+V08,Sprint,BK 3840 EE,11,Tersedia,550000
+V09,Sprint,BK 2321 YT,11,Tersedia,550000
+V010,Sprint,BK 2493 GW,11,Dipinjam,550000
+V011,Luxio,BK 4325 HE,8,Tersedia,400000
