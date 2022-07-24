@@ -278,7 +278,7 @@ public class Van extends Transportasi{
                 
                 String data[] = s.split(",");
                 
-                if (data[5].equalsIgnoreCase(equals)) {
+                if (data[4].equalsIgnoreCase(equals)) {
                     asc.add (new Van(data[0], data[1], data[2], Integer.parseInt(data[3]),data[4], Integer.parseInt(data[5])));
                 }
             }
@@ -288,6 +288,37 @@ public class Van extends Transportasi{
                     temp = asc.get(i);
                     int j;
                     for (j = i; j >= gap && asc.get(j-gap).getHargaSewa() > temp.getHargaSewa(); j -= gap) {
+                        asc.set(j, asc.get(j-gap));
+                    }
+                    asc.set(j, temp);
+                }
+            }
+
+            System.out.println("|Kode\t|Jenis\t|Penumpang\t|Harga\t|");
+            for (Van van : asc) {
+                System.out.println(van);
+            }
+        }
+    }
+
+    public static void displayAturanVanDsc (String equals) throws FileNotFoundException, IOException{
+        try (BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\van.txt"))) {
+            String s = "";
+            ArrayList <Van> asc = new ArrayList<>();
+            while ((s = read.readLine()) != null) {
+                
+                String data[] = s.split(",");
+                
+                if (data[4].equalsIgnoreCase(equals)) {
+                    asc.add (new Van(data[0], data[1], data[2], Integer.parseInt(data[3]),data[4], Integer.parseInt(data[5])));
+                }
+            }
+            for (int gap = asc.size()/2; gap > 0; gap /= 2) {
+                for (int i = gap; i < asc.size(); i += 1) {
+                    Van temp = new Van();
+                    temp = asc.get(i);
+                    int j;
+                    for (j = i; j >= gap && asc.get(j-gap).getHargaSewa() < temp.getHargaSewa(); j -= gap) {
                         asc.set(j, asc.get(j-gap));
                     }
                     asc.set(j, temp);

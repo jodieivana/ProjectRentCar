@@ -43,14 +43,14 @@ public class App  {
                     if (pilihan3 == 1) {
                         Mobil.displayAturanMobilAsc("Tersedia");
                     } else if (pilihan3 == 2){
-                        Mobil.displayAturanMobil("Tersedia");
+                        Mobil.displayAturanMobilDsc("Tersedia");
                     } else throw new Exception("Harus masukkan nilai \"1\" sampai \"2\"");
                 } else if (pilihan2 == 2){
                     int pilihan3 = CetakUrutMenu();
                     if (pilihan3 == 1) {
                         Van.displayAturanVanAsc("Tersedia");
                     } else if (pilihan3 == 2){
-                        Van.displayAturanVan("Tersedia");
+                        Van.displayAturanVanDsc("Tersedia");
                     } else throw new Exception("Harus masukkan nilai \"1\" sampai \"2\"");
                 } else throw new Exception("Harus masukkan nilai \"1\" sampai \"2\"");
 

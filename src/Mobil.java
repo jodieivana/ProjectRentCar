@@ -304,20 +304,53 @@ public class Mobil extends Transportasi{
                 String data[] = s.split(",");
                 
                 if (data[5].equalsIgnoreCase(equals)) {
-                    asc.add (new Mobil(data[0], data[1], data[2], data[3],  Integer.parseInt(data[4]),data[5], Integer.parseInt(data[6])));
+                    asc.add (new Mobil(data[0], data[1], data[2], data[3], Integer.parseInt(data[4]),data[5], Integer.parseInt(data[6])));
                 }
             }
-            for (int i = 0; i < asc.size()-1; ++i) {
-                for (int j = 0; j < asc.size()-i-1; ++j) {
-                    if (asc.get(j+1).getHargaSewa() < asc.get(j).getHargaSewa()){
-                        Mobil temp = new Mobil();
-                        temp = asc.get(j);
-                        asc.set(j, asc.get(j+1));
-                        asc.set(j+1, temp);
+            for (int gap = asc.size()/2; gap > 0; gap /= 2) {
+                for (int i = gap; i < asc.size(); i += 1) {
+                    Mobil temp = new Mobil();
+                    temp = asc.get(i);
+                    int j;
+                    for (j = i; j >= gap && asc.get(j-gap).getHargaSewa() > temp.getHargaSewa(); j -= gap) {
+                        asc.set(j, asc.get(j-gap));
                     }
+                    asc.set(j, temp);
                 }
             }
-            System.out.println("|Kode\t|Jenis\t|Transmisi\t|Penumpang\t|Harga\t|");
+
+            System.out.println("|Kode\t|Jenis\t|Penumpang\t|Harga\t|");
+            for (Mobil mobil : asc) {
+                System.out.println(mobil);
+            }
+        }
+    }
+
+    public static void displayAturanMobilDsc (String equals) throws FileNotFoundException, IOException{
+        try (BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\mobil.txt"))) {
+            String s = "";
+            ArrayList <Mobil> asc = new ArrayList<>();
+            while ((s = read.readLine()) != null) {
+                
+                String data[] = s.split(",");
+                
+                if (data[5].equalsIgnoreCase(equals)) {
+                    asc.add (new Mobil(data[0], data[1], data[2], data[3], Integer.parseInt(data[4]),data[5], Integer.parseInt(data[6])));
+                }
+            }
+            for (int gap = asc.size()/2; gap > 0; gap /= 2) {
+                for (int i = gap; i < asc.size(); i += 1) {
+                    Mobil temp = new Mobil();
+                    temp = asc.get(i);
+                    int j;
+                    for (j = i; j >= gap && asc.get(j-gap).getHargaSewa() < temp.getHargaSewa(); j -= gap) {
+                        asc.set(j, asc.get(j-gap));
+                    }
+                    asc.set(j, temp);
+                }
+            }
+
+            System.out.println("|Kode\t|Jenis\t|Penumpang\t|Harga\t|");
             for (Mobil mobil : asc) {
                 System.out.println(mobil);
             }
