@@ -282,16 +282,18 @@ public class Van extends Transportasi{
                     asc.add (new Van(data[0], data[1], data[2], Integer.parseInt(data[3]),data[4], Integer.parseInt(data[5])));
                 }
             }
-            for (int i = 0; i < asc.size()-1; ++i) {
-                for (int j = 0; j < asc.size()-i-1; ++j) {
-                    if (asc.get(j+1).getHargaSewa() < asc.get(j).getHargaSewa()){
-                        Van temp = new Van();
-                        temp = asc.get(j);
-                        asc.set(j, asc.get(j+1));
-                        asc.set(j+1, temp);
+            for (int gap = asc.size()/2; gap > 0; gap /= 2) {
+                for (int i = gap; i < asc.size(); i += 1) {
+                    Van temp = new Van();
+                    temp = asc.get(i);
+                    int j;
+                    for (j = i; j >= gap && asc.get(j-gap).getHargaSewa() > temp.getHargaSewa(); j -= gap) {
+                        asc.set(j, asc.get(j-gap));
                     }
+                    asc.set(j, temp);
                 }
             }
+
             System.out.println("|Kode\t|Jenis\t|Penumpang\t|Harga\t|");
             for (Van van : asc) {
                 System.out.println(van);

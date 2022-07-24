@@ -39,9 +39,19 @@ public class App  {
                 System.out.println("Cetak Kendaraan Tersedia");
                 int pilihan2 = CetakSubMenu();
                 if (pilihan2 == 1) {
-                    Mobil.displayAturanMobil("Tersedia");
+                    int pilihan3 = CetakUrutMenu();
+                    if (pilihan3 == 1) {
+                        Mobil.displayAturanMobilAsc("Tersedia");
+                    } else if (pilihan3 == 2){
+                        Mobil.displayAturanMobil("Tersedia");
+                    } else throw new Exception("Harus masukkan nilai \"1\" sampai \"2\"");
                 } else if (pilihan2 == 2){
-                    Van.displayAturanVan("Tersedia");
+                    int pilihan3 = CetakUrutMenu();
+                    if (pilihan3 == 1) {
+                        Van.displayAturanVanAsc("Tersedia");
+                    } else if (pilihan3 == 2){
+                        Van.displayAturanVan("Tersedia");
+                    } else throw new Exception("Harus masukkan nilai \"1\" sampai \"2\"");
                 } else throw new Exception("Harus masukkan nilai \"1\" sampai \"2\"");
 
             } else if (pilihan == 4) {
@@ -63,6 +73,7 @@ public class App  {
                 } else if (pilihan2 == 2){
                     Van.DaftarVan(vans);
                 } else throw new Exception("Harus masukkan nilai \"1\" sampai \"2\"");
+
             } else if (pilihan == 6) {
                 break;
             } else {
@@ -92,6 +103,16 @@ public class App  {
         System.out.println("-----------------");
         System.out.println("1. Mobil");
         System.out.println("2. Van");
+        System.out.print("Masukkan pilihan anda : ");
+        int pilihan = input.nextInt();
+        return pilihan;
+    }
+
+    public static int CetakUrutMenu () {
+        System.out.println("Tentukan Urutan Harga");
+        System.out.println("-----------------");
+        System.out.println("1. Termurah");
+        System.out.println("2. Termahal");
         System.out.print("Masukkan pilihan anda : ");
         int pilihan = input.nextInt();
         return pilihan;
