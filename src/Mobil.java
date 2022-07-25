@@ -50,6 +50,9 @@ public class Mobil extends Transportasi{
         this.jenisTransmisi = jenisTransmisi;
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk memasukkan data dari file mobil.txt ke arraylist mobil
     public static ArrayList<Mobil> updateMobil (ArrayList<Mobil> mobil) throws FileNotFoundException, IOException {
         try (BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\mobil.txt"))) {
             String s = "";
@@ -61,6 +64,11 @@ public class Mobil extends Transportasi{
         return mobil;
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : - Berfungsi untuk mengupdate textfile dan arraylist jika ada 1 data yang perlu diganti
+    //               - Contoh : Menggantikan status mobil "Tersedia" ke "Dipinjam" atau sebaliknya yang ada di file txt
+    //               - OverLoading dengan method diatas karena nama yang sama tetapi parameter berbeda
     public static void updateMobil (String kodeMobil, String status) throws IOException{
         String FilePath = "C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\mobil.txt";
         File oldFile = new File ("C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\mobil.txt");
@@ -104,6 +112,10 @@ public class Mobil extends Transportasi{
         }
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : - Berfungsi untuk mencetak informasi mengenai mobil dengan kriteria tertentu
+    //               - Contoh : Yang dibawah hanya mencetak Kode, Jenis, Transimisi, Penumpang, dan juga Harga.
     public static void displayAturanMobil (String equals) throws FileNotFoundException, IOException{
         try (BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\mobil.txt"))) {
             String s = "";
@@ -128,6 +140,9 @@ public class Mobil extends Transportasi{
         }
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk mendaftar mobil baru ke arraylist dan juga txt file
     public static void DaftarMobil (ArrayList<Mobil> mobils) throws Exception {
         System.out.println("Daftar Mobil Baru");
             System.out.println("-----------------");
@@ -166,6 +181,9 @@ public class Mobil extends Transportasi{
             }
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk sewa mobil, sekaligus mengupdate status mobil jika mobil terlah disewa serta menambahkannya ke transaksi pinjam dan pelanggan
     public static void SewaMobil (ArrayList<Mobil> mobils, ArrayList<TransaksiPeminjaman> pinjams, ArrayList<Pelanggan> pelanggans) throws Exception {
         
         String tanggalPinjam = util.inputTanggal("peminjaman");
@@ -240,6 +258,9 @@ public class Mobil extends Transportasi{
         }
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk pengembalian mobil, sekaligus mengupdate status mobil jika mobil terlah disewa serta menambahkannya ke transaksi pinjam dan pelanggan
     public static void kembaliMobil (ArrayList<Mobil> mobils, ArrayList<TransaksiPeminjaman> pinjams, ArrayList<Pelanggan> pelanggans, ArrayList<TransaksiPengembalian> kembalis) throws FileNotFoundException, IOException, ParseException{
         TransaksiPeminjaman.displayAturanPinjam ("Meminjam", "m");
         //Input nomor peminjaman yang mau dikembalikan
@@ -295,6 +316,9 @@ public class Mobil extends Transportasi{
         }
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk mengurutkan dan menampilkan mobil berdasarkan harga terendah ke tertinggi menggunakan shell sort
     public static void displayAturanMobilAsc (String equals) throws FileNotFoundException, IOException{
         try (BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\mobil.txt"))) {
             String s = "";
@@ -326,6 +350,9 @@ public class Mobil extends Transportasi{
         }
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk mengurutkan dan menampilkan mobil berdasarkan harga tertinggi ke terendah menggunakan shell sort
     public static void displayAturanMobilDsc (String equals) throws FileNotFoundException, IOException{
         try (BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\mobil.txt"))) {
             String s = "";

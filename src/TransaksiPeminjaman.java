@@ -141,6 +141,9 @@ public class TransaksiPeminjaman extends Transaksi{
             "}";
     }
     
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk memasukkan data dari file peminjaman.txt ke arraylist peminjaman
     public static ArrayList<TransaksiPeminjaman> updatePinjam (ArrayList<TransaksiPeminjaman> pinjams) throws FileNotFoundException, IOException, ParseException {
         try (BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\peminjaman.txt"))) {
             String s = "";
@@ -152,6 +155,11 @@ public class TransaksiPeminjaman extends Transaksi{
         return pinjams;
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : - Berfungsi untuk mengupdate textfile dan arraylist jika ada 1 data yang perlu diganti
+    //               - Contoh : Menggantikan status peminjaman "Meminjam" ke "Berhasil" atau sebaliknya yang ada di file txt
+    //               - OverLoading dengan method diatas karena nama yang sama tetapi parameter berbeda
     public static void updatePinjam (String kodeTransaksi, String status) throws IOException{
         String FilePath = "C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\peminjaman.txt";
         File oldFile = new File ("C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\peminjaman.txt");
@@ -195,6 +203,9 @@ public class TransaksiPeminjaman extends Transaksi{
         }
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk mencetak bon transaksi peminjaman dari kode Transaksi
     public static void cetakRecieptPinjam (String kodeTransaksi, ArrayList<TransaksiPeminjaman> pinjams) throws ParseException {
         for (TransaksiPeminjaman pinjam : pinjams) {
             if (pinjam.getNomorTransaksi().equalsIgnoreCase(kodeTransaksi)) {
@@ -219,6 +230,9 @@ public class TransaksiPeminjaman extends Transaksi{
         }
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk mengembalikan satu transaksi peminjaman dari sebuah kode transaksi
     public static TransaksiPeminjaman cariTransaksiPinjam (String kode, ArrayList<TransaksiPeminjaman> pinjams){
         int i = 0;
         for (TransaksiPeminjaman pinjam : pinjams) {
@@ -230,6 +244,10 @@ public class TransaksiPeminjaman extends Transaksi{
         return pinjams.get(i);
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : - Berfungsi untuk mencetak informasi transaksi peminjaman dengan kriteria tertentu
+    //               - Contoh : Yang dibawah hanya mencetak Kode Transaksi, Kode Transport, Kode Penumpang, dan juga Tanggal Pinjam.
     public static void displayAturanPinjam (String equals1, String kode) throws FileNotFoundException, IOException{
         try (BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\peminjaman.txt"))) {
             String s = "";

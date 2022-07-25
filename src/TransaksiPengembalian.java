@@ -74,6 +74,9 @@ public class TransaksiPengembalian extends Transaksi{
             "}";
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk memasukkan data dari file pengembalian.txt ke arraylist pengembalian
     public static ArrayList<TransaksiPengembalian> updateKembali (ArrayList<TransaksiPengembalian> kembalis) throws FileNotFoundException, IOException, ParseException {
         try (BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\pengembalian.txt"))) {
             String s = "";
@@ -85,6 +88,9 @@ public class TransaksiPengembalian extends Transaksi{
         return kembalis;
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk mencetak bon transaksi pengembalian dari kode Transaksi
     public static void cetakRecieptKembali (String kodeTransaksi, ArrayList<TransaksiPengembalian> kembalis,  ArrayList<TransaksiPeminjaman> pinjams) {
         for (TransaksiPengembalian kembali : kembalis) {
             if (kembali.getNomorTransaksi().equalsIgnoreCase(kodeTransaksi)) {

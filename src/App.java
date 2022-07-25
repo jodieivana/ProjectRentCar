@@ -84,6 +84,9 @@ public class App  {
         } while (yn.equalsIgnoreCase("y"));
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : CetakMenu () berfungsi untuk mencetak menu utama rental, yang berisi Sewa Kendaraan, Kembali Kendaraan, dan lain-lain.
     public static int CetakMenu () {
         System.out.println("Menu Rental Kendaraan");
         System.out.println("-----------------");
@@ -98,6 +101,10 @@ public class App  {
         return pilihan;
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : CetakSubMenu () berfungsi untuk mencetak sub menu, menu ini akan muncul jika pengguna menginput salah satu pilihan dari menu utama,
+    //               lalu pengguna akan memilih pilihan kendaraan dari sub menu yang hanya berisi 2 pilihan kendaraan yaitu Mobil dan Van.
     public static int CetakSubMenu () {
         System.out.println("Tentukan Kendaraan");
         System.out.println("-----------------");
@@ -108,6 +115,11 @@ public class App  {
         return pilihan;
     }
 
+
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : CetakUrutMenu () berfungsi untuk mencetak sub menu dari pilihan menu utama "Cetak kendaraan yang tersedia", 
+    //               lalu pengguna akan memilih pilihan sorting dari sub menu yang berisi 2 pilihan jenis sort yaitu dari yang termurah atau termahal.
     public static int CetakUrutMenu () {
         System.out.println("Tentukan Urutan Harga");
         System.out.println("-----------------");

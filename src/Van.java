@@ -38,6 +38,9 @@ public class Van extends Transportasi{
         this.JumlahPenumpang = JumlahPenumpang;
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk memasukkan data dari file van.txt ke arraylist van
     public static ArrayList<Van> updateVan (ArrayList<Van> van) throws FileNotFoundException, IOException {
         try (BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\van.txt"))) {
             String s = "";
@@ -49,6 +52,11 @@ public class Van extends Transportasi{
         return van;
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : - Berfungsi untuk mengupdate textfile dan arraylist jika ada 1 data yang perlu diganti
+    //               - Contoh : Menggantikan status van "Tersedia" ke "Dipinjam" atau sebaliknya yang ada di file txt
+    //               - OverLoading dengan method diatas karena nama yang sama tetapi parameter berbeda
     public static void updateVan (String kodeVan, String status) throws IOException{
         String FilePath = "C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\van.txt";
         File oldFile = new File ("C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\van.txt");
@@ -92,6 +100,10 @@ public class Van extends Transportasi{
         }
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : - Berfungsi untuk mencetak informasi mengenai van dengan kriteria tertentu
+    //               - Contoh : Yang dibawah hanya mencetak Kode, Jenis, Transimisi, Penumpang, dan juga Harga.
     public static void displayAturanVan (String equals) throws FileNotFoundException, IOException{
         try (BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\van.txt"))) {
             String s = "";
@@ -116,6 +128,9 @@ public class Van extends Transportasi{
         }
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk mendaftar van baru ke arraylist dan juga txt file
     public static void DaftarVan (ArrayList<Van> vans) throws Exception {
         System.out.println("Daftar Van Baru");
                 System.out.println("-----------------");
@@ -141,6 +156,9 @@ public class Van extends Transportasi{
                 }
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk sewa van, sekaligus mengupdate status van jika van terlah disewa serta menambahkannya ke transaksi pinjam dan pelanggan
     public static void SewaVan (ArrayList<Van> vans, ArrayList<TransaksiPeminjaman> pinjams, ArrayList<Pelanggan> pelanggans) throws Exception {
         
         String tanggalPinjam = util.inputTanggal("peminjaman");
@@ -215,6 +233,9 @@ public class Van extends Transportasi{
         }
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk pengembalian van, sekaligus mengupdate status van jika van terlah disewa serta menambahkannya ke transaksi pinjam dan pelanggan
     public static void kembaliVan (ArrayList<Van> vans, ArrayList<TransaksiPeminjaman> pinjams, ArrayList<Pelanggan> pelanggans, ArrayList<TransaksiPengembalian> kembalis) throws FileNotFoundException, IOException, ParseException{
         TransaksiPeminjaman.displayAturanPinjam ("Meminjam", "v");
         //Input nomor peminjaman yang mau dikembalikan
@@ -270,6 +291,9 @@ public class Van extends Transportasi{
         }
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk mengurutkan dan menampilkan van berdasarkan harga terendah ke tertinggi menggunakan shell sort
     public static void displayAturanVanAsc (String equals) throws FileNotFoundException, IOException{
         try (BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\van.txt"))) {
             String s = "";
@@ -301,6 +325,9 @@ public class Van extends Transportasi{
         }
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk mengurutkan dan menampilkan van berdasarkan harga tertinggi ke terendah menggunakan shell sort
     public static void displayAturanVanDsc (String equals) throws FileNotFoundException, IOException{
         try (BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\van.txt"))) {
             String s = "";

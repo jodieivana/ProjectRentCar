@@ -9,7 +9,12 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class util {
+
     static Scanner input = new Scanner(System.in);
+
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk mengubah tanggal yang salah input
     public static String changeToDate (String tanggal) throws ParseException{
         Calendar cal = Calendar.getInstance();
             //String diubah menjadi date
@@ -20,6 +25,9 @@ public class util {
         return tanggal;
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk menambah hari pada tanggal
     public static String addToDate (String tanggal, int durasi) throws ParseException{
         Calendar cal = Calendar.getInstance();
             //String diubah menjadi date
@@ -32,6 +40,9 @@ public class util {
         return tanggal;
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk membuat 2 tanggal dengan perbedaan dalam hari
     public static int getDifferenceDays(String date1, String date2) throws ParseException {
         Date d1 = new SimpleDateFormat("dd/MM/yyyy").parse(date1);
         Date d2 = new SimpleDateFormat("dd/MM/yyyy").parse(date2);
@@ -39,6 +50,9 @@ public class util {
         return (int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk update arraylist dari file
     public static void updateAll ( ArrayList <Mobil> mobils,ArrayList <TransaksiPeminjaman> pinjams, ArrayList <TransaksiPengembalian> kembalis, ArrayList <Pelanggan> pelanggans, ArrayList<Van> vans) throws FileNotFoundException, IOException, ParseException{
         mobils.removeAll(mobils);
         Mobil.updateMobil(mobils);
@@ -52,11 +66,17 @@ public class util {
         Van.updateVan(vans);
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk membersihkan layar
     public static void clearScreen(){
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk mengembalikan inputan tanggal dari user
     public static String inputTanggal (String status) throws ParseException {
         //Input tanggal pinjam
         System.out.println("Masukkan tanggal " + status.toLowerCase());
@@ -66,12 +86,15 @@ public class util {
         int month = input.nextInt();
         System.out.print("Tahun : ");
         int year = input.nextInt();
-            //Hari, bulan, dan tahun digabung menjadi satu tanggal
+        //Hari, bulan, dan tahun digabung menjadi satu tanggal
         String tanggal = Integer.toString(day) + "/" + Integer.toString(month) + "/" +Integer.toString(year);
         tanggal = util.changeToDate(tanggal);
         return tanggal;
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk mengembalikan inputan durasi dari user
     public static int inputDurasi (String status) {
         //Input durasi pinjam
         System.out.print("Masukkan durasi " + status.toLowerCase() + " anda : ");
@@ -79,6 +102,9 @@ public class util {
         return durasi;
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk mengembalikan inputan lokasi dari user
     public static String inputLokasi (String status ){
         //Input lokasi pinjam
         System.out.print("Masukkan lokasi " + status + " anda : ");

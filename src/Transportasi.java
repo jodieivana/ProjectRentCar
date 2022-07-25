@@ -76,8 +76,9 @@ public abstract class Transportasi{
         this.HargaSewa = HargaSewa;
     }
     
-
-    //Cek transportasi
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk mengecek transportasi
     public static int cekTransport (){
         int total = 0;
         int data[] = new int[4];

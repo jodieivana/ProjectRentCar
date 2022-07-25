@@ -94,6 +94,9 @@ public class Pelanggan {
             "}";
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : berfungsi untuk memasukkan data dari file pelanggan.txt ke arraylist pelanggan
     public static ArrayList<Pelanggan> updatePelanggan (ArrayList<Pelanggan> pelanggans) throws FileNotFoundException, IOException {
         try (BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\pelanggan.txt"))) {
             String s = "";
@@ -105,6 +108,11 @@ public class Pelanggan {
         return pelanggans;
     }
 
+    //Nama         : Jodie Ivana Salim
+    //NIM          : 03081210005
+    //Deskripsi    : - Berfungsi untuk mengupdate textfile dan arraylist jika ada 1 data yang perlu diganti
+    //               - Contoh : Menggantikan status pelanggan "Meminjam" ke "Lunas" atau sebaliknya yang ada di file txt
+    //               - OverLoading dengan method diatas karena nama yang sama tetapi parameter berbeda
     public static void updatePelanggan (String kodePelanggan, String status) throws IOException{
         String FilePath = "C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\pelanggan.txt";
         File oldFile = new File ("C:\\Users\\jodie\\OneDrive - Universitas Pelita Harapan\\3. Semester Akselerasi 1\\2. PBO\\ProjectRentCar\\src\\data\\pelanggan.txt");
